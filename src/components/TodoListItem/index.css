@@ -1,0 +1,38 @@
+.todolistitemcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.leftPart{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checkUncheckradio{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.rightPart{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.todolistEditButton{
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.todolistDeleteButton{
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

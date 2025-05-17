@@ -1,0 +1,35 @@
+.todolisteditcontainercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding:0  10px;
+
+}
+.savaeditform{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.editingInput{
+    width: 75%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.editingInput:focus{
+    border: 1.5px solid #b9b8b8;
+    outline: none;
+}
+.savabutton{
+    padding: 10px 20px;
+    background-color: #36b934;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+.Statscontainer{
+    gap: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.statsheading{
+    font-size: 1.5rem;
+    color: #333;
+}
+.stats{
+
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+.stats p{
+    font-size: 1rem;
+    color: #333;
+}

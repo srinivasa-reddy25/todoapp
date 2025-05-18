@@ -2,10 +2,19 @@ import './index.css'
 import { useContext } from 'react'
 import BuildContext from '../../BuildContext'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react';
 
 function Loginpage() {
     
-    const {name,setName,userName,setUserName,password,setPassword}=useContext(BuildContext);
+    const {name,setName,userName,setUserName,password,setPassword,isLogedIn,setIsLoggedIn}=useContext(BuildContext);
+
+    useEffect(() => {
+        const islogin = JSON.parse(localStorage.getItem("isLoggedin"));
+        if (islogin) {
+            alert('Already Logged In');
+            navigate('/', { replace: true });
+        }
+    }, []);
 
     const Url='https://apis.ccbp.in/login';
     const navigate=useNavigate();
@@ -31,7 +40,7 @@ function Loginpage() {
         if(userName==='Rahul' && password==='Rahul@123'){
             alert('Login Successful');
             navigate('/', { replace: true });
-            localStorage.setItem("username",JSON.stringify(name))
+            setIsLoggedIn(true);
         }
         else{
             alert('Login Failed');

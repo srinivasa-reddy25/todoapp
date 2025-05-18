@@ -2,7 +2,7 @@ import './App.css'
 import Loginpage from './components/LoginPage/loginpage'
 import Home from './components/HomePage/homepage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useState,useEffect } from 'react'
+import { useState,useEffect, use } from 'react'
 import BuildContext from './BuildContext'
 import { v4 as uuid } from 'uuid'
 
@@ -15,6 +15,7 @@ if (!localStorage.getItem("username")){
 }
 
 function App() {
+  const [isLogedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState(
@@ -23,7 +24,9 @@ function App() {
     return (Name? JSON.parse(Name):"")
   }
   );
-  
+  useEffect(() => {
+    localStorage.setItem("isLoggedin", JSON.stringify(name))
+  }, [isLogedIn])
 
   const [todolist, settodolist] = useState(() => {
     const saved = localStorage.getItem("todolistItems")
@@ -110,6 +113,8 @@ function App() {
 
   return (
     <BuildContext.Provider value={{
+      isLogedIn,
+      setIsLoggedIn,
       userName,
       setUserName,
       password,

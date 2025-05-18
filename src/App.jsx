@@ -7,7 +7,6 @@ import BuildContext from './BuildContext'
 import { v4 as uuid } from 'uuid'
 
 
-
 if (!localStorage.getItem("todolistItems")) {
   localStorage.setItem("todolistItems", JSON.stringify([]))
 }
@@ -18,11 +17,13 @@ if (!localStorage.getItem("username")){
 function App() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  // ()=>{
-  //   const Name=localStorage.getItem("username");
-  //   return (Name? JSON.parse(Name):"")
-  // }
+  const [name, setName] = useState(
+    ()=>{
+    const Name=localStorage.getItem("username");
+    return (Name? JSON.parse(Name):"")
+  }
+  );
+  
 
   const [todolist, settodolist] = useState(() => {
     const saved = localStorage.getItem("todolistItems")
@@ -135,7 +136,6 @@ function App() {
     </BuildContext.Provider >
 
   )
-
 }
 
 
